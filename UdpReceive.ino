@@ -1,14 +1,6 @@
 /*  ___   ___  ___  _   _  ___   ___   ____ ___  ____
-   / _ \ /___)/ _ \| | | |/ _ \ / _ \ / ___) _ \|    \
-  | |_| |___ | |_| | |_| | |_| | |_| ( (__| |_| | | | |
-   \___/(___/ \___/ \__  |\___/ \___(_)____)___/|_|_|_|
-                    (____/
-   Osoyoo Wifi Arduino Shield Testing Project
-   send UDP message to remote Arduino Device
-   tutorial url: http://osoyoo.com/?p=29020
+   Justine MEHOUNOU
 */
-
-
 
 #include <WiFiEsp.h>
 #include <WiFiEspUdp.h>
@@ -107,11 +99,6 @@ void loop() {
     temperatureReceive = atoi(packetBuffer);
     currentState = temperatureReceive;
     int res = 0;
-    /*Serial.println("readingState:");
-      Serial.println(readingState);
-      Serial.println("currentState:");
-      Serial.println(currentState);
-      currentState = packetBuffer;*/
     if (readingState != currentState) {
       if (temperatureReceive >= 20 && temperatureReceive <= 24) {
         digitalWrite(yellowLED, LOW);
